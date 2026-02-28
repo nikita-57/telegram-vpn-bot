@@ -13,19 +13,14 @@ from loader import marzban_client
 
 logger = logging.getLogger(__name__)
 proxies = {
-#    "vmess": {},
-#    "vless": {
-#        "flow": ""
-#    },
-#    "trojan": {},
-    "shadowsocks": {
-        "method": "chacha20-ietf-poly1305"
+    "vless": {
+        "flow": "xtls-rprx-vision"
     }
 }
 proxies = UserCreateProxies.from_dict(proxies)
 
 inbounds = UserCreateInbounds.from_dict({
-    "Shadowsocks TCP": True
+    "VLESS TCP REALITY": True
 })
 
 def expire_timestamp(expire: datetime):
@@ -80,9 +75,10 @@ async def get_user_links(sub_id: str) -> str:
             parsed_url = urlparse(x)
             if key_data[0] == 'vless':
                 query_params = parse_qs(parsed_url.query)
+                inbound_type = query_params.get("type", ["tcp"])[0]
                 keys.append(
                     'Протокол: <b>{protocol_type}</b>\nКлюч: <pre>{access_key}</pre>'
-                    .format(protocol_type=f'VLESS {query_params["type"][0]}', access_key=x)
+                    .format(protocol_type=f'VLESS {inbound_type}', access_key=x)
                 )
             if key_data[0] == 'trojan':
                 keys.append(

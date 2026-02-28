@@ -26,6 +26,11 @@
 
 ## **🔧 Установка и запуск**
 
+### **Server deployment (white IP)**
+
+Для развёртывания на VPS с белым IP и `VLESS + Reality` используйте отдельную инструкцию:  
+[DEPLOY_SERVER.md](DEPLOY_SERVER.md)
+
 ### **1\. Клонирование репозитория**
 
 Клонируйте репозиторий и перейдите в его директорию:
@@ -100,4 +105,3 @@ CERT_KEY_PATH=/etc/letsencrypt/live/yourdomain_com/privkey.pem
 **Проверка Telegram-бота:**
 
 Отправьте команду `/start` боту в Telegram и убедитесь, что он отвечает и выдаёт ключ для подключения.
-
