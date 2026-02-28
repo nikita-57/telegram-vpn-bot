@@ -35,7 +35,7 @@ services:
       - free_vpn_bot
     volumes:
       - marz-storage:/code
-      - ./marzban/xray_config.json:/code/xray_config.json:ro
+      - ./marzban/xray_config.json:/code/xray_config.json
       - ./volumes/marzban:/var/lib/marzban
       - ./certbot/data:/var/www/certbot
       - /etc/timezone:/etc/timezone:ro
