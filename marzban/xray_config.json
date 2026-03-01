@@ -37,7 +37,8 @@
           "shortIds": [
             "e9a82f23a94ed41e"
           ],
-          "SpiderX": "/"
+          "spiderX": "/",
+          "fingerprint": "chrome"
         }
       },
       "sniffing": {
