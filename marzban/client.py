@@ -13,9 +13,7 @@ from loader import marzban_client
 
 logger = logging.getLogger(__name__)
 proxies = {
-    "vless": {
-        "flow": "xtls-rprx-vision"
-    }
+    "vless": {}
 }
 proxies = UserCreateProxies.from_dict(proxies)
 
